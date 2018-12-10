@@ -1,3 +1,4 @@
 <?php
-print_r($argv);
-echo PHP_EOL;
+
+$given_money = (int) $argv[1];
+$result = [];
