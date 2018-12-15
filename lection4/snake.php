@@ -1,31 +1,43 @@
 <?php
 
-$given_number = 3;
-$k = 1;
-$result_array = [];
-$temp_array = [];
+$given_number = $argv[1];
 
-do {
-    array_push($temp_array, $k);
+$first_array = [];
+$second_array = [];
+$third_array = [];
+$going = 'down';
 
-    if ($k % $given_number === 0) {
-        array_push($result_array, $temp_array);
-        $temp_array = [];
+for ($k = 1; $k <= $given_number * $given_number; $k++) {
+    if ($going === 'down') {
+        array_push($first_array, $k);
+    } else {
+        array_unshift($first_array, $k);
     }
 
-    $k++;
-} while($k <= $given_number * $given_number);
-
-$final_ar = [];
-
-for ($i = 0; $i < count($result_array); $i++) {
-    for ($t = 0; $t < count($result_array); $t++) {
-        array_push($final_ar, $result_array[$t][$i]);
+    if ($k % $given_number === 0) {
+        array_push($second_array, $first_array);
+        $first_array = [];
+        
+        if ($going === 'down') {
+            $going = 'up';
+        } else {
+            $going = 'down';
+        }
     }
 }
 
-for ($d = 1; $d < count($final_ar) + 1; $d++) {
-    echo $final_ar[$d - 1];
+for ($i = 0; $i < count($second_array); $i++) {
+    for ($t = 0; $t < count($second_array); $t++) {
+        array_push($third_array, $second_array[$t][$i]);
+    }
+}
+
+for ($d = 1; $d < count($third_array) + 1; $d++) {
+    if ($third_array[$d - 1] < 10) {
+        echo '  ' . $third_array[$d - 1];
+    } else {
+        echo ' ' . $third_array[$d - 1];
+    }
 
     if ($d % $given_number === 0) {
         echo PHP_EOL;
