@@ -4,7 +4,6 @@ $given_number = $argv[1];
 
 $first_array = [];
 $second_array = [];
-$third_array = [];
 $going = 'down';
 
 for ($k = 1; $k <= $given_number * $given_number; $k++) {
@@ -27,19 +26,15 @@ for ($k = 1; $k <= $given_number * $given_number; $k++) {
 }
 
 for ($i = 0; $i < count($second_array); $i++) {
-    for ($t = 0; $t < count($second_array); $t++) {
-        array_push($third_array, $second_array[$t][$i]);
-    }
-}
-
-for ($d = 1; $d < count($third_array) + 1; $d++) {
-    if ($third_array[$d - 1] < 10) {
-        echo '  ' . $third_array[$d - 1];
-    } else {
-        echo ' ' . $third_array[$d - 1];
-    }
-
-    if ($d % $given_number === 0) {
-        echo PHP_EOL;
+    for ($t = 1; $t < count($second_array) + 1; $t++) {
+        if ($second_array[$t - 1][$i] < 10) {
+            echo '  ' . $second_array[$t - 1][$i];
+        } else {
+            echo ' ' . $second_array[$t - 1][$i];
+        }
+    
+        if ($t % $given_number === 0) {
+            echo PHP_EOL;
+        }    
     }
 }
