@@ -12,8 +12,8 @@
         ]
     },
     "scripts": {
-        "post-create-project-cmd": [
-            "php -r \"copy('config/local-example.php', 'config/local.php');\""
+        "post-autoload-dump": [
+            "php index.php"
         ]
-      }
+    }
 }

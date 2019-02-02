@@ -2,8 +2,6 @@
 
 namespace App;
 
-require 'vendor/autoload.php';
-
 use App\User;
 use App\Employee;
 
@@ -19,6 +17,4 @@ class Wrapper
     }
 }
 
-
-echo 'adfasdfasdf';
-$b = new User();
+$obj = new User();
