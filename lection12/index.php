@@ -1,9 +1,10 @@
 <?php
 
 namespace App;
-
-use App\User;
-use App\Employee;
+include 'App/User.php';
+include 'App/Employee.php';
+use User;
+use Employee;
 
 class Wrapper
 {
@@ -14,7 +15,11 @@ class Wrapper
     {
         $this->user = $user;
         $this->employee = $employee;
+
+        echo 'Working!' . PHP_EOL;
     }
 }
 
-$obj = new User();
+$userObj = new User();
+$employeeObj = new Employee();
+$wrapperObj = new Wrapper($userObj, $employeeObj);
