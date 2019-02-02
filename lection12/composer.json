@@ -1,0 +1,19 @@
+{
+    "name": "user/files",
+    "description": "description is present",
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        },
+        "files": [
+            "App/User.php",
+            "App/Employee.php"
+        ]
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php -r \"copy('config/local-example.php', 'config/local.php');\""
+        ]
+      }
+}

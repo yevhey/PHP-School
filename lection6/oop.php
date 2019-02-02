@@ -1,26 +1,19 @@
 <?php
 
-$studentList = [
-    (object) [
-        'firstname' => 'Mike',
-        'lastname' => 'Barnes',
-        'gender'   => 'male',
-        'status'   => 'freshman',
-        'gpa'      => 4
-    ],
-];
-
-foreach ($studentList as $student) {
-    echo new Student();
-}
-
-
 class Student {
-    public $firstname;
-    public $lastname;
-    public $gender;
+    private $firstname;
+    private $lastname;
+    private $gender;
     public $status;
 
+    public function __construct($a1) 
+    {
+        $this->$firstname = $a1->firstname;
+        $this->$lastname = $a1->lastname;
+        $this->$gender = $a1->gender;
+        $this->$status = $a1->status;
+    }
+    
     public function showMyself()
     {
         return $this->firstname . PHP_EOL .
@@ -41,7 +34,19 @@ class Student {
     }
 }
 
-$obj = new Student;
+$studentList = [
+    (object) [
+        'firstname' => 'Mike',
+        'lastname' => 'Barnes',
+        'gender'   => 'male',
+        'status'   => 'freshman',
+        'gpa'      => 4
+    ],
+];
 
-echo $obj->studyTime(50);
+foreach ($studentList as $student) {
+    $obj = new Student($student);
+    var_dump($obj->showMyself());
+}
+
 echo PHP_EOL;
