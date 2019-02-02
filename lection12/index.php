@@ -1,8 +1,9 @@
 <?php
 
 namespace App;
-include 'App/User.php';
-include 'App/Employee.php';
+
+require __DIR__ . '/vendor/autoload.php';
+
 use User;
 use Employee;
 
