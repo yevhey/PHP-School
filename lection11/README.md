@@ -1,1 +1,1 @@
-`docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7.2-cli php Vehicle.php`
+`docker run -it --rm --name my-script -v "$PWD":/myapp -w /myapp php:7.2-cli php Vehicle.php`
