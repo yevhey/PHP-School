@@ -1,11 +1,9 @@
 <?php
 
-namespace App;
-
 require __DIR__ . '/vendor/autoload.php';
 
-use User;
-use Employee;
+use App\User;
+use App\Employee;
 
 class Wrapper
 {
