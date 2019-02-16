@@ -52,13 +52,13 @@ class Student {
     private $gender;
     public $status;
 
-    public function __construct($a1) 
+    public function __construct($givenStudent)
     {
-        $this->firstname = $a1->firstname;
-        $this->lastname = $a1->lastname;
-        $this->gender = $a1->gender;
-        $this->gpa = $a1->gpa;
-        $this->status = $a1->status;
+        $this->firstname = $givenStudent->firstname;
+        $this->lastname = $givenStudent->lastname;
+        $this->gender = $givenStudent->gender;
+        $this->gpa = $givenStudent->gpa;
+        $this->status = $givenStudent->status;
     }
     
     public function showMyself()
